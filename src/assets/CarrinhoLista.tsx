@@ -23,7 +23,7 @@ export const CarrinhoLista = ({ Product }: any) => {
                     }
                 } else {
                     //* Retorna o item original caso não seja o item a ser atualizado
-                    
+
                     return item;
                 }
             });
@@ -68,6 +68,11 @@ export const CarrinhoLista = ({ Product }: any) => {
                             +
                         </span>
                     </div>
+                </div>
+
+                {/* Valor total da quantidade de itens adicionados */}
+                <div className="flex h-full items-center">
+                    <p className='text-sm my-5'> R$ {Product.price * Product.quantidade} </p>
                 </div>
             </div>
         </>
