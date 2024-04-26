@@ -12,6 +12,7 @@ import {
 import { PriceBadge } from "./PriceBadge";
 import { TiShoppingCart } from "react-icons/ti";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 
 export const ProdutoCard = ({ Product, index }: any) => {
@@ -32,6 +33,8 @@ export const ProdutoCard = ({ Product, index }: any) => {
             // Se o item não está no carrinho, adiciona o novo item com quantidade 1
             setCartContext((prevState: any) => [...prevState, { ...product, quantidade: 1 }]);
         }
+
+        toast.info(`${Product.name} adicionado ao Carrinho`)
     };
 
     return (

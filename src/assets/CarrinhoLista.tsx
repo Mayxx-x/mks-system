@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CarrinhoContext } from "./CarrinhoContext"
 import { BotaoRemover } from "./BotaoRemover";
+import { toast } from "sonner";
 
 
 export const CarrinhoLista = ({ Product }: any) => {
@@ -10,19 +11,23 @@ export const CarrinhoLista = ({ Product }: any) => {
         setCartContext((prevCart: any) => {
             const updatedCart = prevCart.map((item: any) => {
                 if (item.id === id) {
-                    // Handle quantity update or removal
+                    //* Verifica se a quantidade é menor que 0, se for, remove o item
                     if (newQuantity === 0) {
-                        // Remove item if quantity reaches 0
+                        //* Remove o item
+                        toast.info(`${Product.name} removido do Carrinho`)
                         return null;
+
                     } else {
-                        // Update quantity
+                        //* Atualiza a quantidade do item
                         return { ...item, quantidade: newQuantity };
                     }
                 } else {
-                    // Keep other items unchanged
+                    //* Retorna o item original caso não seja o item a ser atualizado
+                    
                     return item;
                 }
             });
+
 
             // Filter out removed items (if any)
             return updatedCart.filter(Boolean);

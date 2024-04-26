@@ -62,7 +62,7 @@ export default function Home() {
         </CarrinhoContext.Provider>
       </QueryClientProvider>
 
-      <Toaster richColors />
+      <Toaster richColors position="top-center" />
     </>
   );
 }
