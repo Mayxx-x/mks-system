@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { CarrinhoContext } from "@/app/page"
+import { CarrinhoContext } from "./CarrinhoContext"
 
 //* UI / Types
 import { ProdutoCard } from "./ProdutoCard"

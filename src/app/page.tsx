@@ -1,5 +1,6 @@
 'use client'
-import { createContext, useEffect, useState } from "react";
+import { CarrinhoContext } from "@/assets/CarrinhoContext";
+import { useEffect, useState } from "react";
 import { QueryClientProvider, QueryClient } from 'react-query'
 import { Toaster } from "@/components/ui/sonner"
 
@@ -10,8 +11,6 @@ import { OpenCarrinho } from "@/components/home/OpenCarrinho";
 
 //* UI / Types
 
-//* Criação do Contexto do Carrinho
-export const CarrinhoContext = createContext(null as any)
 
 const queryClient = new QueryClient()
 

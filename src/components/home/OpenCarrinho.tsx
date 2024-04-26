@@ -1,6 +1,6 @@
 'use client'
 import 'react-modern-drawer/dist/index.css'
-import { CarrinhoContext } from "@/app/page"
+import { CarrinhoContext } from '@/assets/CarrinhoContext'
 import { useContext, useEffect, useState } from "react"
 
 //* UI / Types
