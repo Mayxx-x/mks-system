@@ -4,6 +4,7 @@ import { CarrinhoContext } from "@/app/page"
 import { useContext, useEffect, useState } from "react"
 
 //* UI / Types
+import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { TiShoppingCart } from "react-icons/ti"
 import Drawer from 'react-modern-drawer'
@@ -59,12 +60,12 @@ export const OpenCarrinho = () => {
                             {Array.isArray(cartContext) && cartContext.length === 0 ?
                                 (
                                     <div className='flex items-center justify-center w-full'>
-                                        <img src="/empty_cart.png" alt="" className='w-1/2' />
+                                        <Image width={100} height={100} src="/empty_cart.png" alt="" className='w-1/2' />
                                     </div>
                                 )
                                 :
-                                cartContext?.map((Product: any) => (
-                                    <CarrinhoLista Product={Product} />
+                                cartContext?.map((Product: any, index: number) => (
+                                    <CarrinhoLista key={index} Product={Product} />
                                 ))
                             }
 

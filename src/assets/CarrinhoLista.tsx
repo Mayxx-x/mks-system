@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CarrinhoContext } from "@/app/page";
 import { BotaoRemover } from "./BotaoRemover";
+import Image from "next/image";
 
 
 export const CarrinhoLista = ({ Product }: any) => {
@@ -38,7 +39,7 @@ export const CarrinhoLista = ({ Product }: any) => {
                 <BotaoRemover id={Product.id} handleQuantityChange={handleQuantityChange} />
 
                 {/* Exibir a foto do produto */}
-                <img src={Product.photo} alt="" className="h-full" />
+                <Image width={100} height={100} src={Product.photo} alt="" className="h-full" />
 
                 {/* Exibir o nome e a marca do produto */}
                 <div className='flex-grow'>
